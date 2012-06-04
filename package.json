@@ -4,6 +4,7 @@
   "dependencies": {
     "express": "2.5.x"
 	,"jade": ">= 0.0.1"
+	,"sass": ">= 0.0.1"
   },
   "engines": {
     "node": "0.6.x"
