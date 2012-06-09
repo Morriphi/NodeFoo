@@ -10,11 +10,14 @@ app.configure(function(){
     app.use(express.static(__dirname + '/public/scripts'));
     app.use(express.static(__dirname + '/public/styles'));
     app.use(express.static(__dirname + '/public/images'));
+	app.use(express.cookieParser());
+	app.use(express.session({ secret: 'wasdsafeAD' }));
+	app.use(express.bodyParser());
 });
 
-routes.register(app, function(a){
-	var port = process.env.PORT || 5000;
-	a.listen(port, function() {
-	  console.log("Listening on " + port);
-	});
+routes.register(app);
+
+var port = process.env.PORT || 5000;
+app.listen(port, function() {
+  console.log("Listening on " + port);
 });
